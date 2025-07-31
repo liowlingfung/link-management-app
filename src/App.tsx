@@ -3,7 +3,7 @@ import Header from './components/Header';
 import ActionButtons from './components/ActionButtons';
 import LinkList from './components/LinkList';
 import AddEditLinkForm from './components/AddEditLinkForm';
-import { type Link } from './types.ts';
+import { type Link } from './types';
 
 function App() {
   const [links, setLinks] = useState<Link[]>(() => {
@@ -214,7 +214,7 @@ function App() {
     }
   };
 
-  const isInteractionDisabled = editingLink || selectedLinks.length > 0;
+  const isInteractionDisabled = !!editingLink || selectedLinks.length > 0;
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-100 to-purple-200 flex items-center justify-center p-4">
